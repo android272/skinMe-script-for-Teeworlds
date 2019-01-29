@@ -116,17 +116,22 @@ createSkin() {
 	}" >> $name.json
 }
 
+moveskin() {
+    cp $f "./0.6 skins"
+}
+
 deletSkin() {
-	rm $f
+    rm $f
 }
 
 checkEnv
 
 for f in *.png; do
-	stripBody
-	stripEyes
-	stripFeet
-	stripHands
-	createSkin
-	#deletSkin
+    stripBody
+    stripEyes
+    stripFeet
+    stripHands
+    createSkin
+#    moveskin
+#    deletSkin
 done
