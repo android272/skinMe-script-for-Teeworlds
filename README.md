@@ -1,2 +1,5 @@
-# skinMe-script-for-Teeworlds
-A script that takes old TW 0.6 skins and converts them into TW 0.7 skins.
+Teeworlds 0.7 comes with an all-new skin system that is amazing. The only problem is that this system renders 0.6 skins completely useless. Over the years many skins have been created for 0.6 and it would be a shame to let those die off. So I decided to create this script that will run through your skins folder cut up all your 0.6 skins and convert them into 0.7 skins. Naturally, it would be better to recreate these old skins and migrate them to the new system. But as the community has thinned out not all skins will get this treatment. So this might be the best option for some.
+
+All you have to do is place this script into the skin folder, make sure it is set as exhaustible and run it.  It will check to see if you have the folders needed for the new system and if you don't will create them for you. Then it will loop through all the .pngs in the skin folder copy them to the various folders, crop, rearrange the skin, save them, and make you a skin.json file in your skin folder. The script will even make a backup of the old skins and place them into a "0.6 skins" folder for you in case you want to go back to the old version.
+
+Depending on the skin the eyes may be a problem. so some eyes may still need to be modified manually.
