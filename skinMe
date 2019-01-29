@@ -4,10 +4,6 @@ checkEnv () {
           mkdir body
     fi
 
-    if test ! -d "./tattoo"; then
-          mkdir tattoo
-    fi
-
     if test ! -d "./decoration"; then
           mkdir decoration
     fi
@@ -22,6 +18,10 @@ checkEnv () {
 
     if test ! -d "./hands"; then
           mkdir hands
+    fi
+
+    if test ! -d "./marking"; then
+          mkdir marking
     fi
 
 		if test ! -d "./0.6_skins"; then
