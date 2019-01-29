@@ -84,7 +84,7 @@ stripHands() {
 
     cd "./hands"
 
-    convert $f -crop 64x32+192+0 output.png
+    convert $f -crop 64x32+192+0 -resize 128x64^ output.png
 
     cp output.png $f
 
