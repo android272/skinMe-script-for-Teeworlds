@@ -67,8 +67,8 @@ stripFeet() {
 
     cd "./feet"
 
-    		convert $f -crop 32x32+208+32 output.png
-		convert $f -crop 32x32+208+64 output2.png
+    convert $f -crop 32x32+208+32 -resize 64x64^ output.png
+		convert $f -crop 32x32+208+64 -resize 64x64^ output2.png
 
 		convert output.png output2.png +append output3.png
 
