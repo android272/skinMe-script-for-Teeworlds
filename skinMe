@@ -95,7 +95,6 @@ stripHands() {
 
 createSkin() {
 	name=$(echo $f | cut -f 1 -d '.')
-	touch "$name.skn"
 
 	echo "{"skin": {
 		"body": {
@@ -114,7 +113,7 @@ createSkin() {
 			"filename": "$name",
 			"custom_colors": "false"
 		}}
-	}" >> $name.skn
+	}" >> $name.json
 }
 
 deletSkin() {
