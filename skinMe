@@ -34,12 +34,12 @@ stripBody() {
 
     cd "./body"
 
-    convert $f -crop 96x96+0+0 output.png
-    convert $f -crop 96x96+96+0 output2.png
+    convert $f -crop 96x96+0+0 -resize 128x128^ output.png
+    convert $f -crop 96x96+96+0 -resize 128x128^ output2.png
 
     montage -geometry +1+1 output2.png output.png -background none output3.png
 
-    mogrify -extent 384x96+0+0 -background none output3.png
+    mogrify -extent 256x256+0+0 -background none output3.png
 
     cp output3.png $f
 
