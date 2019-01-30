@@ -57,23 +57,63 @@ stripEyes() {
     convert $f -crop 24x32+64+96 normaleye.png
     convert $f -crop 8x32+64+96 space.png
 
+    convert space.png normaleye.png +append -background none lefteye.png
+
+    convert -flop lefteye.png righteye.png
+
+    convert lefteye.png righteye.png +append -background none normal.png
+
     #Angry Eye
     convert $f -crop 24x32+96+96 angryeye.png
+
+    convert space.png angryeye.png +append -background none lefteye.png
+
+    convert -flop lefteye.png righteye.png
+
+    convert lefteye.png righteye.png +append -background none angry.png
 
     #Hurt Eye
     convert $f -crop 24x32+128+96 hurteye.png
 
+    convert space.png hurteye.png +append lefteye.png
+
+    convert -flop lefteye.png righteye.png
+
+    convert lefteye.png righteye.png +append -background none hurt.png
+
     #Happy Eye
     convert $f -crop 24x32+160+96 happyeye.png
+
+    convert space.png happyeye.png +append -background none lefteye.png
+
+    convert -flop lefteye.png righteye.png
+
+    convert lefteye.png righteye.png +append -background none happy.png
 
     #Ninja Eye
     convert $f -crop 24x32+224+96 ninjaeye.png
 
-    
+    convert space.png ninjaeye.png +append -background none lefteye.png
 
-    cp output.png $f
+    convert -flop lefteye.png righteye.png
 
-    rm output.png
+    convert lefteye.png righteye.png +append -background none ninja.png
+
+    #Merge Eyes
+    convert normal.png angry.png +append -background none output3.png
+    convert hurt.png happy.png +append -background none output4.png
+    convert ninja.png space.png +append -background none output5.png
+
+    convert output3.png output4.png -append -background none output6.png
+    convert output6.png output5.png -append -background none output7.png
+    convert output7.png space.png -append -background none output8.png
+
+    convert output8.png -resize 120x120^ output9.png
+
+    cp output9.png $f
+
+    #Clean Up
+    rm normaleye.png normal.png angryeye.png angry.png hurteye.png hurt.png happyeye.png happy.png ninjaeye.png ninja.png lefteye.png righteye.png space.png output1.png output2.png output3.png output4.png output5.png output6.png output7.png output8.png output9.png
 
     cd ..
 }
