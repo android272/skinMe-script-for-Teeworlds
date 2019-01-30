@@ -169,7 +169,7 @@ createSkin() {
 			\"filename\": \"$name\",
 			\"custom_colors\": \"false\"
 		}}
-	}" >> $name.json
+	}" > $name.json
 }
 
 moveskin() {
