@@ -53,7 +53,23 @@ stripEyes() {
 
     cd "./eyes"
 
-    convert $f -crop 576x32+64+96 output.png
+    #Normal Eye
+    convert $f -crop 24x32+64+96 normaleye.png
+    convert $f -crop 8x32+64+96 space.png
+
+    #Angry Eye
+    convert $f -crop 24x32+96+96 angryeye.png
+
+    #Hurt Eye
+    convert $f -crop 24x32+128+96 hurteye.png
+
+    #Happy Eye
+    convert $f -crop 24x32+160+96 happyeye.png
+
+    #Ninja Eye
+    convert $f -crop 24x32+224+96 ninjaeye.png
+
+    
 
     cp output.png $f
 
