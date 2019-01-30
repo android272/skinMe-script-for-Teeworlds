@@ -152,22 +152,22 @@ stripHands() {
 createSkin() {
 	name=$(echo $f | cut -f 1 -d '.')
 
-	echo "{"skin": {
-		"body": {
-			"filename": "$name",
-			"custom_colors": "false"
+	echo "{\"skin\": {
+		\"body\": {
+			\"filename\": \"$name\",
+			\"custom_colors\": \"false\"
 		},
-		"hands": {
-			"filename": "$name",
-			"custom_colors": "false"
+		\"hands\": {
+			\"filename\": \"$name\",
+			\"custom_colors\": \"false\"
 		},
-		"feet": {
-			"filename": "$name",
-			"custom_colors": "false"
+		\"feet\": {
+			\"filename\": \"$name\",
+			\"custom_colors\": \"false\"
 		},
-		"eyes": {
-			"filename": "$name",
-			"custom_colors": "false"
+		\"eyes\": {
+			\"filename\": \"$name\",
+			\"custom_colors\": \"false\"
 		}}
 	}" >> $name.json
 }
