@@ -39,7 +39,7 @@ stripBody() {
 
     montage -geometry +1+1 output2.png output.png -background none output3.png
 
-    mogrify -extent 256x256+0+0 -background none output3.png
+    mogrify -extent 256x256+0+0 -background none -strip output3.png
 
     cp output3.png $f
 
@@ -108,7 +108,7 @@ stripEyes() {
     convert output6.png output5.png -append -background none output7.png
     convert output7.png space.png -append -background none output8.png
 
-    convert output8.png -resize 120x120^ output9.png
+    convert output8.png -resize 120x120^ -strip output9.png
 
     cp output9.png $f
 
@@ -126,7 +126,7 @@ stripFeet() {
     convert $f -crop 32x32+208+32 -resize 64x64^ output.png
 		convert $f -crop 32x32+208+64 -resize 64x64^ output2.png
 
-		convert output.png output2.png +append output3.png
+		convert output.png output2.png +append -strip output3.png
 
     cp output3.png $f
 
@@ -140,7 +140,7 @@ stripHands() {
 
     cd "./hands"
 
-    convert $f -crop 64x32+192+0 -resize 128x64^ output.png
+    convert $f -crop 64x32+192+0 -resize 128x64^ -strip output.png
 
     cp output.png $f
 
